@@ -67,7 +67,7 @@ fun FirstBody(navController: NavController) {
                 nombre="No hay datos recibidos"
                 dni ="No hay datos recibidos"
             } else {
-                if (dni.length != 9|| !dni.substring(9).all { it.isLetter() } || dni.substring(0,8).all { it.isDigit() }){
+                if (dni.length != 9|| !dni.substring(9).all { it.isLetter() } || !dni.substring(0,8).all { it.isDigit() }){
                     dni="DNI incorrecto"
                 }else {
                     navController.navigate(route = AppScreen.SecondScreen.route + "/$nombre" + "/$dni")
